@@ -60,6 +60,6 @@ name = "philip"
 #     print("The name is in uppercase.")
 
 # Working with the split function on strings.
-class_names = "Alinda,Lucky,Jonan,Desire,Prosper"
-splited_names = class_names.split(",")
+class_names = "Alinda|Lucky|Jonan|Desire|Prosper"
+splited_names = class_names.split("|")
 print(splited_names)
