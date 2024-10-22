@@ -83,6 +83,17 @@ trippled = create_multiplier(3)
 print(double(5))
 print(trippled(5))
 
+
+
+
+
+
+
+
+
+
+
+
 def apply_to_each(func, iterable):
     return [func(x) for x in iterable]
 
