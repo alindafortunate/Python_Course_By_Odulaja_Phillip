@@ -23,7 +23,7 @@ class Square(Shape):
         self.length = length
 
     def area(self):
-        return self.length * self.length
+        return self.length ** 2
 
 
 rectangle_1 = Rectangle(2, 3)
