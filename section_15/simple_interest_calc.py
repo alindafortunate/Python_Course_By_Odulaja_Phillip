@@ -1,15 +1,15 @@
 from typing import List
 def discount_calculator(discount_percentage: float):
     shopping_mall = "Walmart"
+    return lambda items:f"Your discount is {sum(items) - (sum(items) * discount_percentage / 100)},thank you for choosing {shopping_mall} "
+        # replacing this with a lambda function.
+    # def discounted_cost(price_for_items: List):        
+    #     sum_of_costs = sum(price_for_items)
+    #     discounted_amount = sum_of_costs * discount_percentage / 100
+    #     discounted_cost = sum_of_costs - discounted_amount
+    #     return f" Your discount is {discounted_cost}, thank you for choosing {shopping_mall}"
 
-    def discounted_cost(price_for_items: List):
-
-        sum_of_costs = sum(price_for_items)
-        discounted_amount = sum_of_costs * discount_percentage / 100
-        discounted_cost = sum_of_costs - discounted_amount
-        return f" Your discount is {discounted_cost}, thank you for choosing {shopping_mall}"
-
-    return discounted_cost
+    # return discounted_cost
 
 
 mangoes = 67.90
