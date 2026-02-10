@@ -1,3 +1,5 @@
+from functools import reduce
+
 # We want to make a program where by the user account is
 # debited 5% for saving if it has been credited otherwise not debited if it has been debited.
 
@@ -12,3 +14,7 @@ print(savings)
 # We now want to filter out 0 transactions.
 filtered_savings = list(filter(lambda saving: saving != 0, savings))
 print(filtered_savings)
+
+# We want to get the total amount without using loops.
+total_amount = reduce(lambda prev, next: prev + next, filtered_savings)
+print(f"The total amount is {round(total_amount, 1)}")
