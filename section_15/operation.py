@@ -5,3 +5,4 @@ def operation(operation, a, b):
 
 multiply = lambda x, y: x * y
 print(operation(multiply, 3, 5))
+
