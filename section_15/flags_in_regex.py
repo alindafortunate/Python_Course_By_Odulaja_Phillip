@@ -9,9 +9,18 @@
 
 import re
 
-sentence = "I'am Alinda Fortunate, the best Software Developer in the world."
-pattern = re.compile(r".")
+sentence = "I'am Alinda Fortunate, the best Software Developer in the world. \n I know my God will make reach there."
+pattern = re.compile(r".", flags=re.S)
 print(pattern.search(sentence))
+
+# We now want to search the end and start of the line.
+
+startpatttern = re.compile("^I'am")
+print(f"The start of the line is {startpatttern.search(sentence)}")
+
+endpattern = re.compile("there.$")
+print(f"The end of the line is {endpattern.search(sentence)}")
+
 
 # Below is a string and a raw string
 # print(
@@ -26,8 +35,8 @@ print(pattern.search(sentence))
 
 # Working with flags in python.
 
-matches = re.finditer(pattern, sentence)
-for match in matches:
-    print(match)
+# matches = re.finditer(pattern, sentence)
+# for match in matches:
+#     print(match)
 
-print(sentence[59:60])
+# print(sentence[59:60])
