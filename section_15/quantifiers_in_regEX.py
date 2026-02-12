@@ -10,7 +10,10 @@ with open(r"text.txt", "r") as text_file:
     # pattern = re.compile(r"https?://(www\.)?\w+\.com")
 
     # matching phone numbers
-    pattern = re.compile(r"\+\d{1,3}\s\d+-\d+-\d+")
+    # pattern = re.compile(r"\+\d{1,3}\s\d+-\d+-\d+")
+
+    # Matching ip addresses.
+    pattern = re.compile(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")
     matches = pattern.finditer(content)
     for match in matches:
         print(match)
