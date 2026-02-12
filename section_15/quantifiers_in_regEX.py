@@ -13,7 +13,11 @@ with open(r"text.txt", "r") as text_file:
     # pattern = re.compile(r"\+\d{1,3}\s\d+-\d+-\d+")
 
     # Matching ip addresses.
-    pattern = re.compile(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")
+    # pattern = re.compile(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")
+
+    # matching names with title like Mr, Mrs, Ms
+    # Applying groups
+    pattern = re.compile(r"(Mr\.|Ms|Mrs)\s[A-Za-z]+\s[a-zA-Z]+")
     matches = pattern.finditer(content)
     for match in matches:
         print(match)
