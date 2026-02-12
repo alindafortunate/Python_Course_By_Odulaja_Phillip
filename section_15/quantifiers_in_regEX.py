@@ -17,7 +17,10 @@ with open(r"text.txt", "r") as text_file:
 
     # matching names with title like Mr, Mrs, Ms
     # Applying groups
-    pattern = re.compile(r"(Mr\.?|Ms\.?|Mrs\.?)\s[A-Za-z`+-_]+\s[a-zA-Z]+")
+    # pattern = re.compile(r"(Mr\.?|Ms\.?|Mrs\.?)\s[A-Za-z`+-_]+\s[a-zA-Z]+")
+
+    # matching email addresses
+    pattern = re.compile(r"[a-zA-Z0-9\+\-\_\.]+@[a-z]+(\.com|\.org|\.edu)")
     matches = pattern.finditer(content)
     for match in matches:
         print(match)
