@@ -7,7 +7,7 @@ with open(r"text.txt", "r") as text_file:
     # pattern = re.compile(r"\B@\w+")
 
     # matching urls
-    pattern = re.compile(r"https?://(www.)?\w+.com")
+    pattern = re.compile(r"https?://(www\.)?\w+\.com")
     matches = pattern.finditer(content)
     for match in matches:
         print(match)
