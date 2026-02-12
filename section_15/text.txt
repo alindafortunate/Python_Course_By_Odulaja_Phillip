@@ -7,8 +7,8 @@ Phone: +1 (555) 123-4567
    - jane.smith@example.com
 
 2. Extracting phone numbers: 
-   - +1 (555) 123-4567
-   - (123) 456-7890
+   - +1 555-123-4567
+   - +234 123-456-7890
 
 3. Finding URLs: 
    - http://www.example.com
