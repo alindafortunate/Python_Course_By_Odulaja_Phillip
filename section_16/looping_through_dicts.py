@@ -1,5 +1,8 @@
 # Looping through dictionaries.
-prices = {"apple": 0.5, "banana": 0.3, "orange": 0.8}
+prices = {"apple": 0.5, "banana": 0.3, "orange": 0.8, "mango": 1.23, "melon": 2.34}
+
+expensive_fruits = {fruit: price for fruit, price in prices.items() if price > 1.0}
+print(expensive_fruits)
 
 # Normal dict looping
 # for fruit in prices:
