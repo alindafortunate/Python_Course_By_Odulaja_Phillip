@@ -41,4 +41,12 @@ def group_names(names: List):
     """
     This function returns groups of dictionaries with the key as the first letter and values as the names with the first letter
     """
-    
+
+    groups = {
+        name[0]: list(filter(lambda name: names[0].startswith(name[0]), names))
+        for name in names
+    }
+    return groups
+
+
+print(group_names(contacts))
