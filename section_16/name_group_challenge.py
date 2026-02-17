@@ -34,6 +34,7 @@ contacts = [
     "Ella",
     "Emily",
     "Michael",
+    'Ben'
 ]
 
 
@@ -41,12 +42,9 @@ def group_names(names: List):
     """
     This function returns groups of dictionaries with the key as the first letter and values as the names with the first letter
     """
-    for n in names:
-        n = names.index(n)
 
     groups = {
-        name[0]: ()
-        for name in names
+        name[0]: list(names for names in names if names[0] == name[0]) for name in names
     }
     return groups
 
