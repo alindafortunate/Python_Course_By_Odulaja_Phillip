@@ -6,9 +6,8 @@
 
 
 try:
-    with open(r"zsample_file.txt", 'r') as file:
+    with open(r"zsample_file.txt", "r") as file:
         print(file.read())
-except FileNotFoundError: 
-    with open(r'sample.txt', 'w') as new_file:
-        new_file.write('I am new text here -> updated now.')
-    
+except FileNotFoundError:
+    with open(r"sample.txt", "w") as new_file:
+        new_file.write("I am new text here -> updated now.")
