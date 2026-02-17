@@ -1,0 +1,16 @@
+{
+    "name": "John Deo",
+    "age": 30,
+    "city": "New York",
+    "email": "johndeo@example.com",
+    "hobbies": [
+        "reading",
+        "traveling",
+        "cooking"
+    ],
+    "education": {
+        "degree": "Bachelor's",
+        "major": "Computer Science",
+        "university": "ABC University"
+    }
+}
