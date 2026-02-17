@@ -34,7 +34,7 @@ contacts = [
     "Ella",
     "Emily",
     "Michael",
-    'Ben'
+    "Ben",
 ]
 
 
@@ -45,7 +45,7 @@ def group_names(names: List):
 
     groups = {
         name[0]: list(names for names in names if names[0] == name[0]) for name in names
-    }
+    }  # Here we did a list comprehension with in a dict comprehension.
     return groups
 
 
