@@ -17,7 +17,10 @@ msg = EmailMessage()
 msg["From"] = EMAIL_ADDRESS
 msg["To"] = EMAIL_ADDRESS
 msg["Subject"] = "Trying the Email Module."
-msg.set_content("Wow I am making progress.")
+message_body = """
+Hello, the Lord is good to me and I know that surely He will give me a way out each and every day of my life.
+"""
+msg.set_content(message_body)  # The set_content() method, takes in the message body.
 with SMTP_SSL("smtp.gmail.com", 465) as server:
     # server.ehlo()
     # server.starttls()   # Here we are going to use SMPT_SSL to replace the security these three lines would enforce.
