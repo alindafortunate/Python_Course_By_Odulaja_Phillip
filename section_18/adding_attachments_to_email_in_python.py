@@ -24,6 +24,7 @@ Hello, the Lord is good to me and I know that surely He will give me a way out e
 We are excited to announce our very first sky diving contest that will happen in Mbarara.
 """
 msg.set_content(message_body)
+# ## Attaching images.
 images = ["sky_diving 2.jpg", "sky_diving.jpg"]
 for image in images:
     with open(image, "rb") as file:
@@ -34,6 +35,13 @@ for image in images:
         image_file, maintype="image", subtype=image_format, filename=image_name
     )
 
+# ## Attaching a pdf.
+with open(r"odulaja philip temitayo.pdf", "rb") as file:
+    pdf_file = file.read()
+    pdf_name = file.name
+msg.add_attachment(
+    pdf_file, maintype="application", subtype="octet-stream", filename=pdf_name
+)
 
 with SMTP_SSL("smtp.gmail.com", 465) as server:
     server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
