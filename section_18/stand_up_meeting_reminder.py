@@ -6,3 +6,27 @@
 # (1.From who, 2.To who, 3.Subject, 4.The message body, 5.An attachment 6.Scheduled time.)
 # Resources
 # (The 1.smtplib library, 2.SMTP_SSL class, 3.email module, 4.datetime module, 5.datetime class.)
+import os
+import smtplib
+from smtplib import SMTP_SSL
+from email.message import EmailMessage
+from dotenv import load_dotenv
+
+load_dotenv()
+
+EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
+OTHER_ADDRESS = os.environ.get("OTHER_ADDRESS")
+PASSWORD = os.environ.get("EMAIL_PASSWORD")
+
+msg = EmailMessage()
+msg["From"] = EMAIL_ADDRESS
+msg["TO"] = [EMAIL_ADDRESS, OTHER_ADDRESS]
+msg["Subject"] = "Code Review Meeting."
+msg.set_content(
+    "Receive warm greetings dear Team, \nAs earlier communicated, we shall have our standup meeting on Saturday at 9:00am.\nAttend in person."
+)
+
+with SMTP_SSL("smtp.gmail.com", 465) as server:
+    server.login(EMAIL_ADDRESS, PASSWORD)
+    server.send_message(msg)
+    print("Email has been sent.")
