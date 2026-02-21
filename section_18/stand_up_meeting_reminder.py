@@ -26,6 +26,14 @@ msg.set_content(
     "Receive warm greetings dear Team, \nAs earlier communicated, we shall have our standup meeting on Saturday at 9:00am.\nAttend in person."
 )
 
+# Adding an attachment.
+with open(r"meeting_letter.txt", "rb") as letter:
+    meeting_letter = letter.read()
+    letter_name = letter.name
+msg.add_attachment(
+    meeting_letter, maintype="application", subtype="octet-stream", filename=letter_name
+)
+
 with SMTP_SSL("smtp.gmail.com", 465) as server:
     server.login(EMAIL_ADDRESS, PASSWORD)
     server.send_message(msg)
